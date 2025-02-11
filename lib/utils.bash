@@ -53,7 +53,7 @@ download_release() {
     ;;
   esac
 
-  if [[ $(semVer $version) -gt $(semVer "6.6.0") ]]; then platform+="-x64"; fi
+  if [[ $(semVer $version) -gt $(semVer "6.6.0") ]]; then platform+="-$(uname -m)"; fi
 
   url="$GH_REPO/releases/download/v${version}/spectral-$platform"
 
